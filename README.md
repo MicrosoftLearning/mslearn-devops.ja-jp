@@ -1,2 +1,24 @@
-# https-github.com-MicrosoftLearning-mslearn-devops.ja-jp
-Store localized Japanese content of https://github.com/MicrosoftLearning/mslearn-devops
+# DevOps、DevSecOps、SRE、プラットフォーム エンジニアリングの概要
+
+ようこそ。 このリポジトリには、[Microsoft Learn](https://learn.microsoft.com/) の **DevOps ラーニング パス**の実践演習を完了するために必要なすべての手順とリソースが含まれています。
+
+DevOps の基礎を学ぶ場合でも、サイト信頼性エンジニアリングとプラットフォーム エンジニアリングの実践を深く掘り下げる場合でも、このリポジトリはガイド付きの実践的な学習に役立ちます。
+
+---
+
+## ここで説明する内容
+
+- ステップバイステップの演習手順  
+- 必要な構成ファイルと資産  
+- 参照実装とサンプル コード  
+
+---
+
+## 問題の報告
+
+演習中に問題が発生した場合は、このリポジトリで [[Issue]](../../issues) を開いてお知らせください。
+
+> ⚠️ **注:**  
+> このリポジトリの**学習演習**に関連する事項についてお手伝いします。  
+> 製品関連のバグや、**GitHub、Azure DevOps、Azure** などのツール、またはその他の Microsoft サービスに関する問題については、Microsoft サポートに直接お問い合わせください。  
+> 👉[https://support.microsoft.com/](https://support.microsoft.com/) - 関連する製品を選択し、サポート リクエストを開いてください。
