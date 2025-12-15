@@ -115,8 +115,8 @@ Azure Resource Manager サービス接続を使用すると、パイプライン
    - **subscriptionid**: お使いの Azure サブスクリプション ID
    - **azureserviceconnection**: **'azure subs'**
    - **webappname**: Web アプリのグローバルに一意の名前 (例: **az400-webapp-NAME**)
-   - **csmFile**: **'$(Pipeline.Workspace)/**/infra/$(templateFile)'\*\*
-   - **packageForLinux**: **'$(Pipeline.Workspace)/**/Web.zip'\*\*
+   - **csmFile**: **'\$(Pipeline.Workspace)/eshoponweb-ci/Bicep/\$(templateFile)'**
+   - **packageForLinux**: **'\$(Pipeline.Workspace)/eshoponweb-ci/Web.zip'**
 1. **[保存して実行]** を選択します
 1. パイプラインを開き、正常に実行されるまで待ちます
 
