@@ -220,6 +220,8 @@ DevTest 環境と運用環境を表す 2 つの Azure Web アプリを作成し�
 1. タスク **[Azure App Service のデプロイ]** を選択します
 1. **[パッケージまたはフォルダー]** フィールドで、既定値を `$(System.DefaultWorkingDirectory)/**/Web.zip` に更新します
 1. **[アプリケーションと構成の設定]** を開き、**[アプリの設定]** に「`-UseOnlyInMemoryDatabase true -ASPNETCORE_ENVIRONMENT Development`」と入力します
+1. **[エージェントで実行]** のエージェント設定で、**[エージェントの選択]** に移動して、**[ホストされた/Azure Pipelines]** として **[エージェント プール]** を、**[エージェントの指定]** に **[windows-latest]** を指定します
+1. **[保存]** を選択し、[保存] ダイアログ ボックスで **[OK]** を選択します
 
 ### 運用ステージを構成する
 
@@ -229,6 +231,7 @@ DevTest 環境と運用環境を表す 2 つの Azure Web アプリを作成し�
 1. タスク **[Azure App Service のデプロイ]** を選択します
 1. **[パッケージまたはフォルダー]** フィールドで、既定値を `$(System.DefaultWorkingDirectory)/**/Web.zip` に更新します
 1. **[アプリケーションと構成の設定]** を開き、**[アプリの設定]** に「`-UseOnlyInMemoryDatabase true -ASPNETCORE_ENVIRONMENT Development`」と入力します
+1. 1. **[エージェントで実行]** のエージェント設定で、**[エージェントの選択]** に移動して、**[ホストされた/Azure Pipelines]** として **[エージェント プール]** を、**[エージェントの指定]** に **[windows-latest]** を指定します 
 1. **[保存]** を選択し、[保存] ダイアログ ボックスで **[OK]** を選択します
 
 ### リリース パイプラインをテストする
