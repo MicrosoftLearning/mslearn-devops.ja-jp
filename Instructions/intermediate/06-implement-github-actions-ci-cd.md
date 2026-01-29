@@ -127,10 +127,10 @@ lab:
 1. リポジトリ ページで、 **[Code]** に移動し、**eShopOnWeb/.github/workflows/eshoponweb-cicd.yml** というファイルを開きます。 このワークフローは、指定された .NET 8 Web サイト コード用の CI/CD プロセスを定義します。
 1. **on** セクションのコメントを解除します ("#"を削除します)。 このワークフローはメイン ブランチへのプッシュのたびにトリガーされ、手動トリガー ("workflow_dispatch") も実行できます。
 1. **env** セクションで、次の変更を行います。
-   - **RESOURCE-GROUP** 変数の **NAME** を置き換えます。 これは、前の手順で作成したのと同じリソース グループである必要があります。
+   - **RESOURCE-GROUP** 変数の **rg-eshoponweb-NAME** を置き換えます。 これは、前の手順で作成したのと同じリソース グループである必要があります。
    - (省略可能) **LOCATION** には、最も近い [Azure リージョン](https://azure.microsoft.com/explore/global-infrastructure/geographies)を選択できます。 たとえば、"eastus"、"eastasia"、"westus" などです。
    - **SUBSCRIPTION-ID** の **YOUR-SUBS-ID** を置き換えます。
-   - **WEBAPP-NAME** の **NAME** を一意の別名に置き換えます。 これは、Azure App Service を使用してグローバルに一意の Web サイトを作成するために使用されます。
+   - **WEBAPP-NAME** の **eshoponweb-webapp-NAME** を一意のエイリアスに置き換えます。 これは、Azure App Service を使用してグローバルに一意の Web サイトを作成するために使用されます。
 1. ワークフローを注意深くお読みください。理解に役立つコメントが記載されています。
 
 1. 右上の **[Commit changes...]** を選びます。**[Commit changes]** は既定値 (メイン ブランチを変更する) のままです。 ワークフローが自動的に実行されます。
