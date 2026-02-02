@@ -7,9 +7,9 @@ lab:
 
 # Azure Artifacts によるパッケージ管理
 
-**推定所要時間:** 35 分
-
 フィードの作成と接続、NuGet パッケージの作成と発行、NuGet パッケージのインポート、NuGet パッケージの更新など、パッケージ管理のために Azure Artifacts を操作する方法について説明します。 Azure Artifacts により、Azure DevOps での NuGet、npm、Maven パッケージの検出、インストール、発行は容易になります。
+
+このラボの所要時間は約 **35** 分です。
 
 ## 開始する前に
 
@@ -43,7 +43,7 @@ Azure Artifacts は、Azure DevOps での NuGet、npm、Maven パッケージの
 1. ブラウザーで、Azure DevOps 組織を開きます
 1. **[新しいプロジェクト]** を選択します
 1. プロジェクトに **eShopOnWeb** という名前を付けます
-1. 他のフィールドは既定値のままにします
+1. 他のフィールドは既定値のままにしておきます
 1. **[作成]** を選択します
 
 ## eShopOnWeb Git リポジトリをインポートする

@@ -159,8 +159,9 @@ lab:
      --resource-group rg-eshoponweb-$SECONDARY_REGION_SUFFIX \
      --template-file infra/webapp.bicep \
      --parameters webAppName=eshop-$SECONDARY_REGION_SUFFIX-$SUFFIX \
-                  sku=F1 \
-  ```
+     sku=F1 \
+
+   ```
 
 1. デプロイが完了するまで待ちます。 この処理には数分かかる場合があります。
 
