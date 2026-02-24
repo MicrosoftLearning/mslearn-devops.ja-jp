@@ -117,12 +117,14 @@ Azure Resource Manager サービス接続を使用すると、パイプライン
    - **subscriptionid**: 自分の Azure サブスクリプション ID (Azure portal の [サブスクリプション] から)
    - **azureserviceconnection**: **'azure subs'**
    - **webappname**: Web アプリのグローバル一意名、たとえば **az400-webapp-NAME** (NAME を置き換えてください)
-1. 同じ YAML パイプライン定義の中の **task: AzureResourceManagerTemplateDeployment@3** セクションを更新します。  
+1. 同じ YAML パイプライン定義の中の **task: AzureResourceManagerTemplateDeployment@3** セクションに注目してください。  
    **inputs** の値:
    - **csmFile**: **`\$(Pipeline.Workspace)/eshoponweb-ci/Bicep/$(templateFile)`**
-1. 同じ YAML パイプライン定義の中の **task: AzureRMWebAppDeployment@4** セクションを更新します。  
+   - これは、リポジトリ内の /Bicep フォルダー内の `webapp.bicep` ファイルを指します。これは、AzureResourceManagerTemplateDeployment タスク構成に必要な設定です。 
+1. 同じ YAML パイプライン定義の中の **task: AzureRMWebAppDeployment@4** セクションに注目してください。  
    **inputs** の値:
    - **packageForLinux**: **`\$(Pipeline.Workspace)/eshoponweb-ci/WebSite/Web.zip`**
+   - これは、継続的インテグレーション パイプラインから作成された Webdeploy zip パッケージ (成果物) を参照します。 
 1. **[保存して実行]** を選択します
 1. パイプラインを開き、正常に実行されるまで待ちます。 デプロイには平均で 3 分から 5 分ほどかかります。
 
