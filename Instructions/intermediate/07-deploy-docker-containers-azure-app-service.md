@@ -3,6 +3,14 @@ lab:
   topic: Intermediate
   title: Docker コンテナーを Azure App Service Web アプリにデプロイする
   description: Azure DevOps の CI/CD パイプラインを使って、カスタム Docker イメージをビルドして、Azure Container Registry にプッシュし、コンテナーとして Azure App Service にデプロイする方法を学びます。
+  duration: 20 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure App Service
+    - Azure Container Registry
+    - Azure DevOps
 ---
 
 # Docker コンテナーを Azure App Service Web アプリにデプロイする

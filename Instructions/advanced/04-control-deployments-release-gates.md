@@ -3,6 +3,12 @@ lab:
   topic: Advanced
   title: リリース ゲートを使用したデプロイの制御
   description: デプロイ ゲートを構成し、それらを使用して環境固有のデプロイ条件で Azure Pipelines の実行を制御する方法を学習します。
+  duration: 75 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure Pipelines
 ---
 
 # リリース ゲートを使用したデプロイの制御

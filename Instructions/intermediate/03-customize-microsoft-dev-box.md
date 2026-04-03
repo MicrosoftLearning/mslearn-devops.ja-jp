@@ -3,6 +3,9 @@ lab:
   topic: Intermediate
   title: カスタム イメージとネットワークを使用して Microsoft Dev Box をカスタマイズする
   description: カスタム イメージ、プライベート ネットワーク、高度な構成を使って Microsoft Dev Box 環境をカスタマイズする方法を学びます。
+  duration: 30 minutes
+  level: 500
+  islab: true
 ---
 
 # カスタム イメージとネットワークを使用して Microsoft Dev Box をカスタマイズする

@@ -3,6 +3,12 @@ lab:
   topic: Basic
   title: Azure Monitor を使用してリアルタイム監視を実装する
   description: Azure Monitor と Application Insights を使用して、アプリケーションの包括的な監視と観測性を実装する方法について説明します。
+  duration: 20 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure Monitor
 ---
 
 # Azure Monitor を使用してリアルタイム監視を実装する
