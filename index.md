@@ -15,7 +15,17 @@ layout: home
 
 ## トピック レベル
 
-{% assign exercises = site.pages | where_exp:"page", "page.url contains '/Instructions'" %} {% assign exercises = exercises | where_exp:"page", "page.lab.topic != null" %} {% assign grouped_exercises = exercises | group_by: "lab.topic" %} {% assign topic_order = "Basic,Intermediate,Advanced" | split: "," %} {% assign sorted_groups = "" | split: "" %} {% for topic in topic_order %} {% assign matching_group = grouped_exercises | where: "name", topic | first %} {% if matching_group %} {% assign sorted_groups = sorted_groups | push: matching_group %} {% endif %} {% endfor %}
+{% assign exercises = site.pages | where_exp:"page", "page.url contains '/Instructions'" %}
+{% assign exercises = exercises | where_exp:"page", "page.lab.topic != null" %}
+{% assign grouped_exercises = exercises | group_by: "lab.topic" %}
+{% assign topic_order = "Basic,Intermediate,Advanced,Agentic" | split: "," %}
+{% assign sorted_groups = "" | split: "" %}
+{% for topic in topic_order %}
+{% assign matching_group = grouped_exercises | where: "name", topic | first %}
+{% if matching_group %}
+{% assign sorted_groups = sorted_groups | push: matching_group %}
+{% endif %}
+{% endfor %}
 
 <ul>
 {% for group in sorted_groups %}
@@ -27,8 +37,10 @@ layout: home
 
 ## <a id="{{ group.name | slugify }}"></a>{{ group.name }}
 
-{% for activity in group.items %} [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) <br/> {{ activity.lab.description }}
+{% for activity in group.items %}
+[{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) <br/> {{ activity.lab.description }}
 
 ---
 
-{% endfor %} <a href="#overview">トップに戻る</a> {% endfor %}
+{% endfor %}
+{% assign exercises = site.pages | where_exp:"page", "page.url contains '/Instructions'" %} {% assign exercises = exercises | where_exp:"page", "page.lab.topic != null" %} {% assign grouped_exercises = exercises | group_by: "lab.topic" %} {% assign topic_order = "Basic,Intermediate,Advanced,Agentic" | split: "," %} {% assign sorted_groups = "" | split: "" %} {% for topic in topic_order %} {% assign matching_group = grouped_exercises | where: "name", topic | first %} {% if matching_group %} {% assign sorted_groups = sorted_groups | push: matching_group %} {% endif %} {% endfor %}
