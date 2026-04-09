@@ -3,6 +3,12 @@ lab:
   topic: Intermediate
   title: Azure Artifacts によるパッケージ管理
   description: フィードの作成と接続、NuGet パッケージの発行など、パッケージ管理のために Azure Artifacts を操作する方法について説明します。
+  duration: 35 minutes
+  level: 300
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure Artifacts
 ---
 
 # Azure Artifacts によるパッケージ管理

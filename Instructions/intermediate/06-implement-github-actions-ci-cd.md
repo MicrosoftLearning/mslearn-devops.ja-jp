@@ -3,6 +3,12 @@ lab:
   topic: Intermediate
   title: CI/CD のために GitHub Actions を実装する
   description: サービス プリンシパル認証と GitHub 環境を使って Azure Web アプリをデプロイする GitHub Actions ワークフローを実装する方法を学びます。
+  duration: 40 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - GitHub
 ---
 
 # CI/CD のために GitHub Actions を実装する

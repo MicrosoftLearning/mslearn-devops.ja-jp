@@ -3,6 +3,13 @@ lab:
   topic: Intermediate
   title: Azure Pipelines を使用した継続的インテグレーションを有効にする
   description: pull request の検証と継続的インテグレーションの実装に YAML を使って、Azure DevOps でビルド パイプラインを定義する方法を学びます。
+  duration: 30 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure DevOps
+    - Azure Pipelines
 ---
 
 # Azure Pipelines を使用した継続的インテグレーションを有効にする

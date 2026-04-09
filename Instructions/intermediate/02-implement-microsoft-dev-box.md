@@ -3,6 +3,9 @@ lab:
   topic: Intermediate
   title: 開発者セルフサービス用に Microsoft Dev Box を実装する
   description: 開発者セルフサービスのシナリオ用に基本的な Microsoft Dev Box 環境を実装する方法を学びます。
+  duration: 30 minutes
+  level: 300
+  islab: true
 ---
 
 # 開発者セルフサービス用に Microsoft Dev Box を実装する

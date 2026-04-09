@@ -3,6 +3,11 @@ lab:
   topic: Basic
   title: GitHub で作業フローを実装する
   description: リポジトリのフォーク、issue、ブランチ、pull request の作成など、GitHub を使用したリポジトリの実装および管理方法について説明します。
+  duration: 30 minutes
+  level: 200
+  islab: true
+  primarytopics:
+    - GitHub
 ---
 
 # GitHub で作業フローを実装する
@@ -19,9 +24,9 @@ lab:
 
 ## 開始する前に
 
-ラボを完了するには、以下が必要です。
+このラボを終えるには、次のものが必要です。
 
-- GitHub ユーザー アカウント。 アカウントをお持ちでない場合は、[新しいアカウントを作成](https://github.com/join)できます。 GitHub アカウントを作成する手順が必要な場合は、記事「[GitHub でのアカウントの作成](https://docs.github.com/get-started/quickstart/creating-an-account-on-github)」を参照してください。
+- GitHub ユーザー アカウント。 アカウントがない場合は、[新しいアカウントを作成](https://github.com/join)できます。 GitHub アカウントを作成する手順が必要な場合は、記事「[GitHub でのアカウントの作成](https://docs.github.com/get-started/quickstart/creating-an-account-on-github)」を参照してください。
 
 ## GitHub を使ってリポジトリを実装および管理する
 

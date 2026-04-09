@@ -3,6 +3,12 @@ lab:
   topic: Basic
   title: Azure プロジェクトの Wiki を使用してチームの知識を共有する
   description: Markdown のコンテンツの管理や Mermaid ダイアグラムの作成など、Azure DevOps で Wiki を作成および構成する方法について説明します。
+  duration: 45 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure DevOps
 ---
 
 # Azure プロジェクトの Wiki を使用してチームの知識を共有する

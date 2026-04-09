@@ -3,6 +3,13 @@ lab:
   topic: Basic
   title: Azure Boards を使用したアジャイル プランニングとポートフォリオ管理
   description: Azure Boards が提供するアジャイル プランニングとポートフォリオ管理のツールとプロセス、およびチーム全体で作業をすばやく計画、管理、追跡するのにそれらがどのように役立つかについて学びます。
+  duration: 60 minutes
+  level: 300
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure Boards
+    - Azure DevOps
 ---
 
 # Azure Boards を使用したアジャイル プランニングとポートフォリオ管理

@@ -3,6 +3,13 @@ lab:
   topic: Advanced
   title: Azure Key Vault を Azure DevOps と統合する
   description: Azure Key Vault と Azure Pipeline を統合して、パスワードやキーなどの機密データを安全に保存および取得する方法を学習します。
+  duration: 40 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure DevOps
+    - Azure Key Vault
 ---
 
 # Azure Key Vault を Azure DevOps と統合する

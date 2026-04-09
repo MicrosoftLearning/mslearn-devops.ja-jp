@@ -3,6 +3,12 @@ lab:
   topic: Advanced
   title: 動的構成と機能フラグを有効にする
   description: Azure App Configuration を使用して、動的な機能の切り替えによりアプリケーションの設定と機能フラグを一元的に管理する方法を学習します。
+  duration: 45 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure App Configuration
 ---
 
 # 動的構成と機能フラグを有効にする

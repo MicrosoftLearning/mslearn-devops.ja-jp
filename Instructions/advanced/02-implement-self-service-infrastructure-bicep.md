@@ -3,6 +3,9 @@ lab:
   topic: Advanced
   title: Bicep を使用してセルフサービス インフラストラクチャを実装する
   description: セルフサービス プラットフォーム エンジニアリングのシナリオ向けに、Bicep を使用してコードとしてのインフラストラクチャを実装する方法を学習します。
+  duration: 30 minutes
+  level: 400
+  islab: true
 ---
 
 # Bicep を使用してセルフサービス インフラストラクチャを実装する

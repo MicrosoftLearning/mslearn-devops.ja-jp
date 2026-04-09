@@ -3,6 +3,12 @@ lab:
   topic: Advanced
   title: Azure Load Testing を使ってアプリケーション パフォーマンスを監視する
   description: Azure Load Testing を使用して、ライブ実行中の Web アプリケーションに対するパフォーマンス テストをさまざまな負荷シナリオでシミュレートする方法を学習します。
+  duration: 35 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure Load Testing
 ---
 
 # Azure Load Testing を使ってアプリケーション パフォーマンスを監視する

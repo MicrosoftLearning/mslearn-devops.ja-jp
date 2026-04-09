@@ -3,6 +3,11 @@ lab:
   topic: Advanced
   title: Azure Bicep テンプレートを使用したデプロイ
   description: Azure Bicep テンプレートを作成し、Azure Bicep モジュールの概念と Azure YAML パイプラインを使用して、そのテンプレートをモジュール化する方法を学習します。
+  duration: 30 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
 ---
 
 # Azure Bicep テンプレートを使用したデプロイ

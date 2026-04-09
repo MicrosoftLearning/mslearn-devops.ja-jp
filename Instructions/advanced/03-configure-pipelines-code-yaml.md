@@ -3,6 +3,9 @@ lab:
   topic: Advanced
   title: YAML を使用してパイプラインをコードとして構成する
   description: YAML を使用してビルド パイプラインとリリース パイプラインを定義し、ソース コードと同様に管理されるマークアップ ファイルを使用してパイプライン機能にアクセスできるようにする方法を学習します。
+  duration: 45 minutes
+  level: 400
+  islab: true
 ---
 
 # YAML を使用してパイプラインをコードとして構成する

@@ -3,6 +3,11 @@ lab:
   topic: Intermediate
   title: 機能テストの設定と実行
   description: 単体テスト、統合テスト、機能テストを含む、.NET アプリケーション用の CI パイプラインを構成する方法を学びます。
+  duration: 20 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - .NET
 ---
 
 # 機能テストの設定と実行

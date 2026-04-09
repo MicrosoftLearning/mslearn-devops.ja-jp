@@ -3,6 +3,15 @@ lab:
   topic: Basic
   title: Azure Repos の Git によるバージョン管理
   description: Azure DevOps の一元化された Git リポジトリと簡単に同期できるローカル Git リポジトリの確立について学びます。 また、Visual Studio Code を使用した Git の分岐とマージのサポートについても学びます。
+  duration: 45 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure DevOps
+    - Azure Repos
+    - Visual Studio
+    - Visual Studio Code
 ---
 
 # Azure Repos の Git によるバージョン管理
