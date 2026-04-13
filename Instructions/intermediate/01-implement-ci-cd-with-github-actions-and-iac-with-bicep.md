@@ -3,6 +3,12 @@ lab:
   topic: Intermediate
   title: GitHub Actions を使って CI/CD を実装し、Bicep を使って IaC を実装する
   description: GitHub Actions と Bicep を使用する Infrastructure as Code (IaC) によって CI/CD を実装する方法を学びます。
+  duration: 40 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - GitHub
+    - Bicep
 ---
 
 # GitHub Actions を使って CI/CD を実装し、Bicep を使って IaC を実装する
@@ -22,7 +28,7 @@ lab:
 
 このラボを終えるには、次のものが必要です。
 
-- GitHub ユーザー アカウント。 アカウントをお持ちでない場合は、[新しいアカウントを作成](https://github.com/join)できます。 GitHub アカウントの作成方法の手順が必要な場合は、「[GitHub でのアカウントの作成](https://docs.github.com/get-started/quickstart/creating-an-account-on-github)」をご覧ください。
+- GitHub ユーザー アカウント。 アカウントがない場合は、[新しいアカウントを作成](https://github.com/join)できます。 GitHub アカウントを作成する手順が必要な場合は、記事「[GitHub でのアカウントの作成](https://docs.github.com/get-started/quickstart/creating-an-account-on-github)」を参照してください。
 - 少なくとも共同作成者レベルのアクセス権を持っている Azure サブスクリプション。 まだお持ちでない場合は、[サインアップ](https://azure.microsoft.com/)できます。
 
 ## ラボ用の Azure サブスクリプションを準備する
@@ -98,23 +104,52 @@ lab:
 
 ### ターゲット環境を構成する
 
-> **注:**  まずリソース グループを作成します。 ワークフローを 2 回実行して、2 つの異なる Azure リージョンに Web サイトの 2 つのインスタンスをデプロイします (この例では米国東部と米国西部)。 必要に応じて、ご自分がいる場所に近いリージョンを使うようにこれらを調整できます。
+> **注:**  まずリソース グループを作成します。 ワークフローを 2 回実行して、選択した 2 つの Azure リージョンに Web サイトの 2 つのインスタンスをデプロイします。 このラボでは、これらを `region1`、`region2` として参照します。
+
+### Azure リージョン名を検索する
+
+リソースを作成する前に、ワークフロー変数で使用する公式の Azure リージョン名を特定します。 Azure portal の表示名 (たとえば `East US`) は、CLI 名 (たとえば `eastus`) とは異なります。
+
+1. Azure portal で、検索テキスト ボックスの右にある **[Cloud Shell]** アイコンを選びます。
+1. **Bash** または **PowerShell** の選択を求めるメッセージが表示されたら、**[Bash]** を選択します。
+1. Bash セッションで、次のコマンドを実行します。
+
+   ```cli
+   az account list-locations --query "[].{DisplayName:displayName, Name:name}" --output table
+   ```
+
+1. このラボで使用する 2 つのリージョン CLI 名を記録します。
+   - `REGION1` (最初のワークフロー実行用のプライマリ リージョン)
+   - `REGION2` (2 番目のワークフロー実行用のセカンダリ リージョン)
+
+   > **注:** リージョン ペアの例として、`eastus` と `westus`、`westeurope` と `northeurope`、またはサブスクリプション クォータでサポートされている任意の 2 つのリージョンがあります。
 
 1. Azure portal が表示されている Web ブラウザー タブ (`https://portal.azure.com`) に切り替えます。
 1. Azure portal で、ページ上部の検索テキスト ボックスに「**`Resource groups`**」と入力し、結果の一覧で **[リソース グループ]** を選択します。
 1. **[リソース グループ]** ページで、**[+ 作成]** を選択します。
-1. **[リソース グループ]** テキスト ボックスに「**`rg-eshoponweb-westus`**」と入力します。
-1. **[リージョン]** ドロップダウン リストで、**[(米国) 米国西部]** を選びます。
+1. **[リソース グループ]** テキスト ボックスに「**`rg-eshoponweb-region1`**」と入力します。
+1. **[リージョン]** ドロップダウン リストで、**REGION1** に対応する Azure リージョンを選択します。
 1. **[確認 + 作成]** を選び、**[確認 + 作成]** で **[作成]** を選びます。
 1. **[リソース グループ]** ページで、**[+ 作成]** を選択します。
-1. **[リソース グループ]** テキスト ボックスに「**`rg-eshoponweb-eastus`**」と入力します。
-1. **[リージョン]** ドロップダウン リストで、**[(米国) 米国東部]** を選びます。
+1. **[リソース グループ]** テキスト ボックスに「**`rg-eshoponweb-region2`**」と入力します。
+1. **[リージョン]** ドロップダウン リストで、**REGION2** に対応する Azure リージョンを選択します。
 1. **[確認 + 作成]** を選び、**[確認 + 作成]** で **[作成]** を選びます。
 
    > **注:**  次に、GitHub Actions ワークフローからターゲットの Azure サブスクリプションへの認証に使用されるサービス プリンシパルを作成し、それにサブスクリプションの共同作成者のロールを割り当てます。
 
 1. Azure portal で、検索テキスト ボックスの右にある **[Cloud Shell]** アイコンを選びます。
 1. 必要に応じて、[Cloud Shell] ペインの左上隅にあるドロップダウン メニューで **[Bash]** を選びます。
+1. Cloud Shell ペイン内の Bash セッションで、次のコマンドを実行して、先ほど選択した 2 つのリージョン CLI 名の変数を宣言します。
+
+   ```cli
+   REGION1="<first-region-cli-name>"
+   REGION2="<second-region-cli-name>"
+   echo "REGION1=$REGION1"
+   echo "REGION2=$REGION2"
+   ```
+
+   > **注:** プレースホルダーは、先ほど記録した実際のリージョン CLI 名 (たとえば、`eastus`、`westeurope`、`northeurope`、`southeastasia`) に置き換えます。
+
 1. [Cloud Shell] ペイン内の Bash セッションで、次のコマンドを実行して、Azure サブスクリプション ID の値を変数に保存します。
 
    ```cli
@@ -154,14 +189,14 @@ lab:
 1. Cloud Shell 画面内に Bash セッションが表示されている Web ブラウザーに切り換え、次のコマンドを実行して、デプロイする 1 つ目の App Service Web アプリの名前を生成します。
 
    ```cli
-   echo devops-webapp-westus-$RANDOM$RANDOM
+   echo devops-webapp-$REGION1-$RANDOM$RANDOM
    ```
 
 1. コマンドによって返された値をコピーして記録します。 これはこの演習の後半で使用します。
 1. Cloud Shell 画面内の Bash セッションで、次のコマンドを実行して、デプロイする 2 つ目の App Service Web アプリの名前を生成します。
 
    ```cli
-   echo devops-webapp-eastus-$RANDOM$RANDOM
+   echo devops-webapp-$REGION2-$RANDOM$RANDOM
    ```
 
 1. コマンドによって返された値をコピーして記録します。 これはこの演習の後半で使用します。
@@ -182,9 +217,10 @@ lab:
 1. **[編集]** ペインで、8 行めを次のテキストに置き換えます。
 
    ```yaml
-   RESOURCE-GROUP: rg-eshoponweb-westus
+   RESOURCE-GROUP: rg-eshoponweb-region1
    ```
 
+1. **[編集]** ペインで、9 行目にある `location` 変数を **REGION1** (先ほど記録した最初のリージョン CLI 名) に置き換えます。
 1. **[編集]** ペインで、11 行めの `YOUR-SUBS-ID` プレースホルダーを、この演習で前に記録した Azure サブスクリプション ID の値に置き換えます。
 1. **[編集]** ペインで、12 行めの `eshoponweb-webapp-NAME` プレースホルダーを、この演習で前に生成した**最初の** Azure App Service Web アプリの名前に置き換えます。
 1. **[.github/workflows/eshoponweb-cicd.yml]** ペインで、**[変更点のコミット]** を選び、もう一度 **[変更のコミット]** を選びます。
@@ -222,10 +258,10 @@ lab:
 1. **[編集]** ペインで、8 行めを次のテキストに置き換えます。
 
    ```yaml
-   RESOURCE-GROUP: rg-eshoponweb-eastus
+   RESOURCE-GROUP: rg-eshoponweb-region2
    ```
 
-1. **[編集]** ペインで、9 行目の `location` 変数を、自分の場所に最も近いリージョンに置き換えます。
+1. **[編集]** ペインで、9 行目にある `location` 変数を **REGION2** (先ほど記録した 2 番目のリージョン CLI 名) に置き換えます。
 1. **[編集]** ペインで、12 行めの `eshoponweb-webapp-NAME` プレースホルダーを、この演習で前に生成した **2 番めの** Azure App Service Web アプリの名前に置き換えます。
 1. **[.github/workflows/eshoponweb-cicd.yml]** ペインで、**[変更点のコミット]** を選び、もう一度 **[変更のコミット]** を選びます。
 1. フォークされた **eShopOnWeb** GitHub リポジトリ ページが表示されている Web ブラウザー ウィンドウで、**[アクション]** を選びます。
@@ -243,9 +279,9 @@ lab:
    > **注**:いずれかのステップが失敗した場合は、ワークフローの進行状況を表示する同じページで、右上隅の **[Re-run all jobs]\(すべてのジョブを再実行\)** を選び、**[Re-run all jobs]\(すべてのジョブを再実行\)** ペインで、**[Re-run jobs]\(ジョブの再実行\)** を選びます。
 
 1. Azure portal が表示されている Web ブラウザー ウィンドウで、ページ上部の検索テキスト ボックスに「**`App Services`**」と入力し、結果の一覧で **[App Services]** を選択します。
-1. **[App Services]** ページの App Services の一覧で、この演習で前に作成した **devops-webapp-westus-** アプリ サービスを選びます。
-1. **[devops-webapp-westus-]** ページの **[要点]** セクションで、**[既定のドメイン]** の値が表示されていることを確認し、それを選んで新しいブラウザー タブで Web アプリを開きます。
-1. 新しいブラウザー タブで、Web アプリが表示されていて、機能していることを確認します。 同じ方法で、**米国東部**リージョンの 2 番めの Web アプリも確認できます。
+1. **[App Services]** ページの App Services の一覧で、この演習で前に作成した **devops-webapp-&lt;REGION1&gt;-** アプリ サービスを選びます。
+1. **devops-webapp-&lt;REGION1&gt;-** ページの **[要点]** セクションで、**[既定のドメイン]** の値が表示されていることを確認し、それを選んで新しいブラウザー タブで Web アプリを開きます。
+1. 新しいブラウザー タブで、Web アプリが表示されていて、機能していることを確認します。 同じ方法で、**REGION2** の 2 番目の Web アプリも確認できます。
 
 ## リソースをクリーンアップする
 

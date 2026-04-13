@@ -3,6 +3,11 @@ lab:
   topic: Advanced
   title: マルチリージョン Web アプリをデプロイし、Traffic Manager と Azure Chaos Studio を使用して回復性を高める
   description: マルチリージョン Web アプリケーションをデプロイし、Traffic Manager を使用してワークロードの回復性を高め、Azure Chaos Studio を使用して回復性をテストする方法を学習します。
+  duration: 60 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
 ---
 
 # マルチリージョン Web アプリをデプロイし、Traffic Manager と Azure Chaos Studio を使用して回復性を高める
@@ -45,7 +50,7 @@ lab:
 1. Web ブラウザーを開始し、Azure portal (`https://portal.azure.com`) にアクセスします。
 1. メッセージが表示されたら、使用可能な Azure サブスクリプションへの所有者アクセス権を持つ Microsoft Entra ID アカウントを使用して、サインインします。
 1. Azure portal が表示されている Web ブラウザー タブで、ページ上部の検索テキスト ボックスに「**`Subscriptions`**」と入力し、結果の一覧で **[サブスクリプション]** を選択します。
-1. [サブスクリプション] ページの左側にある垂直メニューで、**[リソース プロバイダー]** を選びます。
+1. [サブスクリプション] ページの左側にある縦のメニューで、**[設定]** **>** **[リソース プロバイダー]** を選択します。
 1. リソース プロバイダーの一覧で、**Microsoft.Chaos** を検索して選択します。
 1. **Microsoft.Chaos** リソース プロバイダーが選択されている状態で、ツール バーの **[登録]** を選びます。
 
